@@ -63,7 +63,10 @@ function addTransaction(source, amount) {
 form.addEventListener("submit", event => {
     event.preventDefault();
     if (form.source.value.trim() === "" || form.amount.value.trim() === "") {
-        
+        return alert("Please enter a negative or positive value apart from zero")
+
+    }
+    else if (form.source.value.trim() == 0 || form.amount.value.trim() == 0 ) {
         return alert("Please enter a negative or positive value apart from zero")
     }
     addTransaction(form.source.value.trim(), Number(form.amount.value));
